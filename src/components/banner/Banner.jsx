@@ -20,6 +20,7 @@ const Banner = () => {
           height: "340px",
           bgcolor: "#252525",
           color: "#ffffff",
+          border: "2px solid #ffffff",
         }}
       >
         <Button
