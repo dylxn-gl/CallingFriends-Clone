@@ -6,7 +6,7 @@ import {
     Button,
 } from "@mui/material";
 
-const Cards = () => {
+const BetCard = (endDate, cost) => {
     return (
         <>
             <Card sx={{ padding: 1, display: "flex", gap: 1, alignItems: "center", borderRadius: 6, width: "100%", }}>
@@ -26,10 +26,10 @@ const Cards = () => {
                 }}>
                     <Typography variant="body2">Description:</Typography>
                     <Typography sx={{ fontWeight: "bold" }} variant="body2">
-                        Termina: NaN/NaN/NaN
+                        Termina: {endDate}
                     </Typography>
                     <Typography sx={{ fontWeight: "bold" }} variant="body2">
-                        Monto: Euros
+                        Monto: {cost}
                     </Typography>
                     <Button
                         sx={{
@@ -47,4 +47,4 @@ const Cards = () => {
     );
 };
 
-export default Cards;
+export default BetCard;

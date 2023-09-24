@@ -7,6 +7,7 @@ const Img = styled("img")({
   width: "190px",
   height: "190px",
   borderRadius: "50%",
+  border: "5px solid #ffffff",
   zIndex: 1,
 });
 
@@ -18,7 +19,7 @@ const Banner = () => {
           mb: "2px",
           width: "100%",
           height: "340px",
-          bgcolor: "#252525",
+          background: `url(${API.user.background})`,
           color: "#ffffff",
         }}
       >
