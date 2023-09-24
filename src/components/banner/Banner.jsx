@@ -4,10 +4,10 @@ import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API";
 
 const Img = styled("img")({
+  mb: 1,
   width: "190px",
   height: "190px",
   borderRadius: "50%",
-  borderBottom: "4px solid #ffffff",
   zIndex: 1,
 });
 
