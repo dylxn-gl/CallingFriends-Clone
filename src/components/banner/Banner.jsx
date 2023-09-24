@@ -4,7 +4,6 @@ import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API";
 
 const Img = styled("img")({
-  mb: 1,
   width: "190px",
   height: "190px",
   borderRadius: "50%",
@@ -16,11 +15,11 @@ const Banner = () => {
     <>
       <Box
         sx={{
+          mb: "2px",
           width: "100%",
           height: "340px",
           bgcolor: "#252525",
           color: "#ffffff",
-          border: "2px solid #ffffff",
         }}
       >
         <Button
