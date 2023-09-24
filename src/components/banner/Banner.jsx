@@ -7,7 +7,7 @@ const Img = styled("img")({
   width: "190px",
   height: "190px",
   borderRadius: "50%",
-  border: "4px solid #ffffff",
+  borderBottom: "4px solid #ffffff",
   zIndex: 1,
 });
 
