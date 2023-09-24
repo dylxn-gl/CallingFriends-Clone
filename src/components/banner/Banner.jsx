@@ -8,6 +8,7 @@ const Img = styled("img")({
   height: "190px",
   borderRadius: "50%",
   border: "4px solid #ffffff",
+  zIndex: 1,
 });
 
 const Banner = () => {
@@ -31,6 +32,9 @@ const Banner = () => {
           Actualizar portada
         </Button>
         <Box sx={{
+          mt: 8,
+          ml: "128px",
+          mr: "128px",
           display: "flex",
         }}>
           <Box sx={{
@@ -49,11 +53,15 @@ const Banner = () => {
             </Button>
             <Img src={API.user.photo} />
           </Box>
-          <Box>
+          <Box sx={{
+            width: "100%",
+          }}>
             <Box sx={{
+              mt: 11,
+              mb: 2,
               display: "flex",
               alignItems: "center",
-              gap: 4,
+              gap: 3,
             }}>
               <Typography sx={{
                 flexGrow: "1",
@@ -78,12 +86,14 @@ const Banner = () => {
               </Typography>
             </Box>
             <Box sx={{
-              padding: 1,
+              ml: "-20px",
+              padding: "8px 0 8px 25px",
               display: "flex",
               alignItems: "center",
               gap: 2,
               background: "linear-gradient(90deg,#fff 51%,rgba(69,9,121,0))",
               color: "#169AD7",
+              maxWidth: "655px",
             }}>
               <Typography variant="h6">callingfriends.com/{API.user.username}</Typography>
               <Button
