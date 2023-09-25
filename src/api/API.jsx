@@ -1,7 +1,7 @@
 const API = {
   user: {
-    photo: "https://via.placeholder.com/190x190",
-    background: "https://via.placeholder.com/1141x340",
+    photo: "https://fakeimg.pl/190x190",
+    background: "https://fakeimg.pl/1141x340",
     name: "Dylan Alexander",
     username: "dylxn.gl",
     followers: 0,
@@ -9,14 +9,17 @@ const API = {
   },
   popularBets: {
     bet1: {
+      userPhoto: "https://fakeimg.pl/80x80",
       endDate: "",
       cost: "",
     },
     bet2: {
+      userPhoto: "https://fakeimg.pl/80x80",
       endDate: "",
       cost: "",
     },
     bet3: {
+      userPhoto: "https://fakeimg.pl/80x80",
       endDate: "",
       cost: "",
     }

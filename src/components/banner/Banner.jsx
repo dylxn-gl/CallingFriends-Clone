@@ -100,6 +100,7 @@ const Banner = () => {
               <Button
                 sx={{
                   borderRadius: 8,
+                  color: "#ffffff",
                 }}
                 color="secondary"
                 variant="contained"

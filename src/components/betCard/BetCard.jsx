@@ -6,10 +6,17 @@ import {
     Button,
 } from "@mui/material";
 
-const BetCard = (endDate, cost) => {
+const BetCard = ({ image, endDate, cost }) => {
     return (
         <>
-            <Card sx={{ padding: 1, display: "flex", gap: 1, alignItems: "center", borderRadius: 6, width: "100%", }}>
+            <Card sx={{
+                padding: 1,
+                display: "flex",
+                gap: 1, alignItems: "center",
+                borderRadius: 6,
+                width: "100%",
+                minWidth: "352px",
+            }}>
                 <CardMedia
                     sx={{
                         borderRadius: "50%",
@@ -17,7 +24,7 @@ const BetCard = (endDate, cost) => {
                         height: 80,
                     }}
                     component="img"
-                    image="https://callingfriends.com/assets/Images/Default_icon_profile.webp"
+                    image={image}
                 />
                 <CardContent sx={{
                     width: 45,

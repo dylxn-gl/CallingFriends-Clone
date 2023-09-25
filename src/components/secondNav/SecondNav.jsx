@@ -11,7 +11,9 @@ const Links = [
 
 const SecondNav = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{
+      mb: .5,
+    }}>
       <Toolbar
         sx={{
           display: "flex",
