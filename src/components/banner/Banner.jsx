@@ -67,7 +67,7 @@ const Banner = () => {
               <Typography sx={{
                 flexGrow: "1",
               }}>
-                {API.user.name}
+                {API.user.name} {API.user.lastname}
                 <br />
                 @{API.user.username}
               </Typography>
