@@ -1,4 +1,6 @@
 import ProfilePage from "../../pages/Profile";
+import ProfileFinancesPage from "../../pages/ProfileFinances";
+import ProfileBetsPage from "../../pages/ProfileBets";
 import BetsPage from "../../pages/Bets";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Box } from "@mui/material";
@@ -58,6 +60,8 @@ const Nav = () => {
       </AppBar>
       <Routes>
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/bets" element={<ProfileBetsPage />} />
+        <Route path="/profile/payments" element={<ProfileFinancesPage />} />
         <Route index path="/all-bets" element={<BetsPage />} />
       </Routes>
     </BrowserRouter>
