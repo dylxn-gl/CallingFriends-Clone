@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API";
 
+//Componente Img
 const Img = styled("img")({
   width: "190px",
   height: "190px",
@@ -14,6 +15,7 @@ const Img = styled("img")({
 
 const Banner = () => {
 
+  //Estados de las funcionalidades
   const [profilePhoto, setProfilePhoto] = useState(API.user.photo);
   const [backgroundPhoto, setBackgroundPhoto] = useState(API.user.background);
   const [openAlert, setOpenAlert] = useState(false);
@@ -21,6 +23,7 @@ const Banner = () => {
   const [textCopied, setTextCopied] = useState(false);
   const textToCopy = "callingfriends.com/" + API.user.username;
 
+  //Funcion para agregar foto de perfil
   const handlePhotoSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -38,6 +41,7 @@ const Banner = () => {
     }
   };
 
+  //Funcion para agregar fondo del perfil
   const handleBackgroundSelect = (e) => {
     const file2 = e.target.files[0];
     if (file2) {
@@ -56,12 +60,13 @@ const Banner = () => {
     }
   };
 
+  //Funcion para copiar url del perfil al portapapeles
   const copyToClipboard = () => {
     navigator.clipboard.writeText(textToCopy).then(() => {
       setTextCopied(true);
     });
 
-    setSecondOpenAlert(true);
+    setSecondOpenAlert(textCopied);
     setTimeout(() => {
       setSecondOpenAlert(false);
     }, 3000);
@@ -78,6 +83,7 @@ const Banner = () => {
         color: "#ffffff",
       }}
     >
+      {/*Boton para actualizar portada*/}
       <Button
         sx={{
           borderRadius: 8,
@@ -96,6 +102,7 @@ const Banner = () => {
           />
         </label>
       </Button>
+      {/*Foto de perfil y datos*/}
       <Box
         sx={{
           mt: 8,
@@ -112,6 +119,7 @@ const Banner = () => {
             gap: 2,
           }}
         >
+          {/*Boton para actualizar avatar*/}
           <Button
             sx={{
               borderRadius: 8,
@@ -129,6 +137,7 @@ const Banner = () => {
               />
             </label>
           </Button>
+          {/*avatar*/}
           <Img src={profilePhoto ? profilePhoto : API.user.photo} />
         </Box>
         <Box
@@ -136,6 +145,7 @@ const Banner = () => {
             width: "100%",
           }}
         >
+          {/*Datos de usuario*/}
           <Box
             sx={{
               mt: 11,

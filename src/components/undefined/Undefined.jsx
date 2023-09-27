@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material"
 
 const Undefined = () => {
+  //Mensaje de undefined
     return (
     <Box sx={{
       display: "grid",

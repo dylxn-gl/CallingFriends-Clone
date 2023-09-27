@@ -3,6 +3,7 @@ import { createTheme, ThemeProvider, Box, Typography, Button, TextField, Snackba
 import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API"
 
+//Tema de mui
 const theme = createTheme({
   palette: {
     mode: "light",
@@ -32,20 +33,22 @@ const theme = createTheme({
 });
 
 const ProfileForm = () => {
-
+  //Estados de los componentes
   const [openAlert, setOpenAlert] = useState(false);
   const [openSecondAlert, setSecondOpenAlert] = useState(false);
   const [textCopied, setTextCopied] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false)
   const textToCopy = "callingfriends.com/" + API.user.username;
 
+  //Funcion para copiar enlace en el portapapeles
   const copyToClipboard = () => {
     navigator.clipboard.writeText(textToCopy)
       .then(() => {
         setTextCopied(true);
       });
 
-    setSecondOpenAlert(true);
+  //Funcion para copiar abrir la alerta
+    setSecondOpenAlert(textCopied);
     setTimeout(() => {
       setSecondOpenAlert(false);
     }, 3000);
@@ -91,7 +94,10 @@ const ProfileForm = () => {
             flexDirection: "column",
             gap: 3,
           }}>
-            {formDisplay ? (
+            {/*Seccion con la informacion y el cambio al formulario de informacion de usuario*/}
+            {formDisplay ? 
+            /*Formulario de informacion personal y de contacto del usuario*/
+            (
               <>
                 <Typography>
                   Información personal
@@ -171,7 +177,9 @@ const ProfileForm = () => {
                   </Button>
                 </Box>
               </>
-            ) : (
+            ) :
+            /*Informacion personal y de contacto del usuario*/
+            (
               <>
                 <Typography>
                   Información personal
@@ -244,6 +252,7 @@ const ProfileForm = () => {
           </Box>
         </Box>
       </ThemeProvider>
+      {/*Alertas*/}
       <Snackbar open={openSecondAlert}>
         <Alert severity="success">Copiado correctamente</Alert>
       </Snackbar>

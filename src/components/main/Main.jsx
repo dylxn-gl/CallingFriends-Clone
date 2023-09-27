@@ -5,6 +5,7 @@ import BetCard from "../betCard/BetCard";
 import ProfileForm from "../form/ProfileForm";
 import API from "../../api/API";
 
+//Tema de mui
 const theme = createTheme({
   palette: {
     text: {
@@ -14,6 +15,7 @@ const theme = createTheme({
 });
 
 const Main = () => {
+  //Main de la seccion principal con el recuadro principal y el recuadro de las apuestas
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -52,11 +54,11 @@ const Main = () => {
               );
             })}
             <Link to="/all-bets">
-            <Button variant="outlined" sx={{
-              borderRadius: 8,
-            }}>
-              Ver más
-            </Button>
+              <Button variant="outlined" sx={{
+                borderRadius: 8,
+              }}>
+                Ver más
+              </Button>
             </Link>
           </Box>
         </Box>

@@ -4,6 +4,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Link } from "react-router-dom";
 
+//Enlaces de la navegacion secundaria
 const Links = [
   { text: "DATOS", icon: <PaidIcon />, href: "/profile", },
   { text: "APUESTAS", icon: <ExitToAppIcon />, href: "/profile/bets", },

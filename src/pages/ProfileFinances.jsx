@@ -5,6 +5,7 @@ import FinancesMain from "../components/FinancesMain/FinancesMain";
 import Footer from "../components/footer/Footer";
 
 const ProfileFinancesPage = () => {
+  //Seccion de finanzas del perfil
   return (
     <>
       <Box

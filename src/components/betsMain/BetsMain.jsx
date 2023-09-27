@@ -3,6 +3,7 @@ import BetCard from "../betCard/BetCard";
 import Undefined from "../undefined/Undefined";
 import API from "../../api/API";
 
+//Tema de mui
 const theme = createTheme({
   palette: {
     text: {
@@ -10,7 +11,9 @@ const theme = createTheme({
     },
   }
 });
+
 const BetsMain = () => {
+    //Cuadro con las cards de las apuestas
     return (
         <>
             <ThemeProvider theme={theme}>

@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 
 const BetCard = ({ image, endDate, cost }) => {
+    //Cards de las apuestas
     return (
         <>
             <Card sx={{

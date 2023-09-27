@@ -1,3 +1,5 @@
+//Arreglo con los datos del usuario
+
 const API = {
   user: {
     photo: "https://fakeimg.pl/190x190",

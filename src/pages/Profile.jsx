@@ -5,6 +5,7 @@ import Main from "../components/main/Main";
 import Footer from "../components/footer/Footer";
 
 const ProfilePage = () => {
+  //Pagina de perfil
   return (
     <>
       <Box

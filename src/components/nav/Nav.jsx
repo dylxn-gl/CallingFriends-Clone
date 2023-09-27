@@ -10,17 +10,20 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { styled } from "@mui/system";
 
+//Enlaces de la navegacion
 const Links = [
   { text: "APUESTAS", icon: <PaidIcon />, href: "/all-bets", },
   { text: "SALIR", icon: <ExitToAppIcon />, href: "", },
   { text: "MI PERFIL", icon: <AccountCircleIcon />, href: "/profile", },
 ];
 
+//Componente para la imagen
 const Img = styled("img")({
   width: 149.05,
 });
 
 const Nav = () => {
+  //Navegacion principal
   return (
     <BrowserRouter>
       <AppBar position="static">
@@ -59,6 +62,7 @@ const Nav = () => {
           </Box>
         </Toolbar>
       </AppBar>
+      {/*Rutas de la navegacion*/}
       <Routes>
         <Route index path="/" element={<Box sx={{height: "90vh",}}><Undefined /></Box>}/>
         <Route path="/profile" element={<ProfilePage />} />

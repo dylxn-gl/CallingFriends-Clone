@@ -5,6 +5,7 @@ import BetsMain from "../components/betsMain/BetsMain";
 import Footer from "../components/footer/Footer";
 
 const ProfileBetsPage = () => {
+  //Seccion de apuestas del perfil
   return (
     <>
       <Box
