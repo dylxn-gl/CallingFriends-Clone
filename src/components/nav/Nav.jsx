@@ -2,6 +2,7 @@ import ProfilePage from "../../pages/Profile";
 import ProfileFinancesPage from "../../pages/ProfileFinances";
 import ProfileBetsPage from "../../pages/ProfileBets";
 import BetsPage from "../../pages/Bets";
+import Undefined from "../undefined/Undefined";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Box } from "@mui/material";
 import PaidIcon from "@mui/icons-material/Paid";
@@ -59,6 +60,7 @@ const Nav = () => {
         </Toolbar>
       </AppBar>
       <Routes>
+        <Route index path="/" element={<Box sx={{height: "90vh",}}><Undefined /></Box>}/>
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/profile/bets" element={<ProfileBetsPage />} />
         <Route path="/profile/payments" element={<ProfileFinancesPage />} />

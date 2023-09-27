@@ -1,8 +1,11 @@
+import { Box } from "@mui/material"
+import Undefined from "../components/undefined/Undefined"
+
 const BetsPage = () => {
   return (
-    <>
-      <h1>Bets</h1>
-    </>
+    <Box sx={{height: "90vh",}}>
+      <Undefined />
+    </Box>    
   )
 }
 

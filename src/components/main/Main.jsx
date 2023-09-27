@@ -1,3 +1,5 @@
+
+import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider, Box, Typography, Button } from "@mui/material";
 import BetCard from "../betCard/BetCard";
 import ProfileForm from "../form/ProfileForm";
@@ -49,11 +51,13 @@ const Main = () => {
                 />
               );
             })}
+            <Link to="/all-bets">
             <Button variant="outlined" sx={{
               borderRadius: 8,
             }}>
               Ver más
             </Button>
+            </Link>
           </Box>
         </Box>
       </ThemeProvider>

@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider, Box, Typography, Button } from "@mui/material";
 import BetCard from "../betCard/BetCard";
+import Undefined from "../undefined/Undefined";
 import API from "../../api/API";
 
 const theme = createTheme({
@@ -17,7 +18,7 @@ const FinancesMain = () => {
                     display: "flex",
                     justifyContent: "space-between",
                 }}>
-                    <Box>hello f</Box>
+                    <Box><Undefined /></Box>
                     <Box sx={{
                         padding: 5,
                         display: "flex",

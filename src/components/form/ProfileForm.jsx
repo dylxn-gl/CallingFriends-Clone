@@ -60,7 +60,7 @@ const ProfileForm = () => {
             gap: 2,
             color: "#169AD7",
           }}>
-            <Typography variant="h6">callingfriends.com/{API.user.username}</Typography>
+            <Typography variant="h6">callingfriends.com/...</Typography>
             <Button
               sx={{
                 borderRadius: 8,
