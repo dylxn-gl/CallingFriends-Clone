@@ -21,16 +21,23 @@ const Main = () => {
       <ThemeProvider theme={theme}>
         <Box sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: { xs: "", md: "space-between", },
+          alignItems: { xs: "center", md: "", },
+          flexDirection: { xs: "column", md: "row" },
         }}>
-          <ProfileForm />
+
+          <Box sx={{
+            ml: { xs: 2, md: 0, },
+          }}>
+            < ProfileForm />
+          </Box>
           <Box sx={{
             padding: 5,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: 4,
-            bgcolor: "#efeeed",
+            bgcolor: { xs: "transparent", md: "#efeeed", },
           }}>
             <Typography sx={{
               color: "#000000",

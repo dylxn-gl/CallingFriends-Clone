@@ -19,12 +19,13 @@ const SecondNav = () => {
       <Toolbar
         sx={{
           display: "flex",
-          justifyContent: "right",
         }}
       >
         <Box
           sx={{
             display: "flex",
+            width: "100%",
+            justifyContent: {xs: "space-between", md: "right"},
           }}
         >
           {Links.map((link, index) => (

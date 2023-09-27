@@ -59,7 +59,7 @@ const ProfileForm = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Box sx={{ mt: 5, mb: 5, color: "#000000" }}>
+        <Box sx={{ mt: 5, mb: 5, color: "#000000",}}>
           <Typography>
             Mi información
           </Typography>
@@ -98,7 +98,7 @@ const ProfileForm = () => {
             {formDisplay ? 
             /*Formulario de informacion personal y de contacto del usuario*/
             (
-              <>
+              <Box>
                 <Typography>
                   Información personal
                 </Typography>
@@ -176,11 +176,11 @@ const ProfileForm = () => {
                     Cancelar
                   </Button>
                 </Box>
-              </>
+              </Box>
             ) :
             /*Informacion personal y de contacto del usuario*/
             (
-              <>
+              <Box>
                 <Typography>
                   Información personal
                 </Typography>
@@ -247,7 +247,7 @@ const ProfileForm = () => {
                     Editar
                   </Button>
                 </Box>
-              </>
+              </Box>
             )}
           </Box>
         </Box>

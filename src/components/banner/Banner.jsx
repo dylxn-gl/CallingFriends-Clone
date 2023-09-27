@@ -87,7 +87,7 @@ const Banner = () => {
       <Button
         sx={{
           borderRadius: 8,
-          margin: "24px 0 0 80%",
+          margin: {xs: "24px 0 0 55%", md: "24px 0 0 80%",},
         }}
         variant="contained"
       >
@@ -105,8 +105,8 @@ const Banner = () => {
       {/*Foto de perfil y datos*/}
       <Box
         sx={{
-          mt: 8,
-          ml: "128px",
+          mt: {xs: 6, md: 8,},
+          ml: {xs: "20px", md: "128px"},
           mr: "128px",
           display: "flex",
         }}
@@ -148,22 +148,25 @@ const Banner = () => {
           {/*Datos de usuario*/}
           <Box
             sx={{
-              mt: 11,
-              mb: 2,
-              display: "flex",
-              alignItems: "center",
-              gap: 3,
+                mt: {xs: 7, md: 11},
+                mb: 2,
+                display: "flex",
+                flexDirection: {xs: "column", md: "row"},
+                alignItems: {xs: "flex-end", md: "center"},
+                gap: 3,
             }}
           >
             <Typography
               sx={{
-                flexGrow: "1",
+                textAlign: {xs: "right", md: "left"},
+                flexGrow: {xs: "", md: "1"},
               }}
             >
               {API.user.name} {API.user.lastname}
               <br />
               @{API.user.username}
             </Typography>
+            <Box sx={{display:"flex", gap: 3,}}>
             <Typography
               sx={{
                 textAlign: "center",
@@ -182,12 +185,13 @@ const Banner = () => {
               <br />
               seguidos
             </Typography>
+            </Box>
           </Box>
           <Box
             sx={{
               ml: "-20px",
               padding: "8px 0 8px 25px",
-              display: "flex",
+              display: {xs: "none", md: "flex"},
               alignItems: "center",
               gap: 2,
               background: "linear-gradient(90deg,#fff 51%,rgba(69,9,121,0))",

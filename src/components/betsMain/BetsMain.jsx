@@ -5,11 +5,11 @@ import API from "../../api/API";
 
 //Tema de mui
 const theme = createTheme({
-  palette: {
-    text: {
-      primary: "#000000",
-    },
-  }
+    palette: {
+        text: {
+            primary: "#000000",
+        },
+    }
 });
 
 const BetsMain = () => {
@@ -19,16 +19,20 @@ const BetsMain = () => {
             <ThemeProvider theme={theme}>
                 <Box sx={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    justifyContent: { xs: "", md: "space-between", },
+                    alignItems: { xs: "center", md: "", },
+                    flexDirection: { xs: "column", md: "row" },
                 }}>
-                    <Box><Undefined /></Box>
+                    <Box sx={{
+                        ml: { xs: 2, md: 0, },
+                    }}><Undefined /></Box>
                     <Box sx={{
                         padding: 5,
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
                         gap: 4,
-                        bgcolor: "#efeeed",
+                        bgcolor: { xs: "transparent", md: "#efeeed", },
                     }}>
                         <Typography sx={{
                             color: "#000000",

@@ -18,46 +18,50 @@ const FinancesMain = () => {
             <ThemeProvider theme={theme}>
                 <Box sx={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    justifyContent: { xs: "", md: "space-between", },
+                    alignItems: { xs: "center", md: "", },
+                    flexDirection: { xs: "column", md: "row" },
                 }}>
-                    <Box><Undefined /></Box>
                     <Box sx={{
-                        padding: 5,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        gap: 4,
-                        bgcolor: "#efeeed",
+                        ml: { xs: 2, md: 0, },
+                    }}><Undefined /></Box>
+                <Box sx={{
+                    padding: 5,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 4,
+                    bgcolor: { xs: "transparent", md: "#efeeed", },
+                }}>
+                    <Typography sx={{
+                        color: "#000000",
                     }}>
-                        <Typography sx={{
-                            color: "#000000",
-                        }}>
-                            Apuestas  mas populares
-                        </Typography>
-                        {Object.keys(API.popularBets).map((betKey) => {
-                            const bet = API.popularBets[betKey];
+                        Apuestas  mas populares
+                    </Typography>
+                    {Object.keys(API.popularBets).map((betKey) => {
+                        const bet = API.popularBets[betKey];
 
-                            if (betKey >= 2) {
-                                return null
-                            }
+                        if (betKey >= 2) {
+                            return null
+                        }
 
-                            return (
-                                <BetCard
-                                    key={betKey}
-                                    image={bet.userPhoto}
-                                    endDate={bet.endDate}
-                                    cost={bet.cost}
-                                />
-                            );
-                        })}
-                        <Button variant="outlined" sx={{
-                            borderRadius: 8,
-                        }}>
-                            Ver más
-                        </Button>
-                    </Box>
+                        return (
+                            <BetCard
+                                key={betKey}
+                                image={bet.userPhoto}
+                                endDate={bet.endDate}
+                                cost={bet.cost}
+                            />
+                        );
+                    })}
+                    <Button variant="outlined" sx={{
+                        borderRadius: 8,
+                    }}>
+                        Ver más
+                    </Button>
                 </Box>
-            </ThemeProvider>
+            </Box>
+        </ThemeProvider >
         </>
     )
 }

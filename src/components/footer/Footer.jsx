@@ -8,7 +8,9 @@ const Footer = () => {
         mt: 10,
         mb: 5,
         display: "flex",
-        justifyContent: "space-between",
+        flexDirection: { xs: "column-reverse", md: "row" },
+        alignItems: { xs: "center" },
+        justifyContent: { xs: "", md: "space-between", },
         color: "#000000",
       }}>
         <Typography>
@@ -17,6 +19,8 @@ const Footer = () => {
         <Box sx={{
           display: "flex",
           gap: 2,
+          flexWrap: "wrap",
+          justifyContent: { xs: "center" },
         }}>
           <Typography>NOSOTROS</Typography>
           <Typography>TERMS DEL SERVICIO</Typography>
