@@ -13,9 +13,11 @@ const Img = styled("img")({
 });
 
 const Banner = () => {
-  
+
   const [profilePhoto, setProfilePhoto] = useState(API.user.photo);
   const [backgroundPhoto, setBackgroundPhoto] = useState(API.user.background);
+  const [textCopied, setTextCopied] = useState(false);
+  const textToCopy = "callingfriends.com/" + API.user.username;
 
   const handlePhotoSelect = (e) => {
     const file = e.target.files[0];
@@ -40,6 +42,14 @@ const Banner = () => {
       reader2.readAsDataURL(file2);
     }
   };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        setTextCopied(true);
+      })
+  };
+
 
   return (
     <Box
@@ -169,6 +179,7 @@ const Banner = () => {
               color="secondary"
               variant="contained"
               startIcon={<ShareIcon />}
+              onClick={copyToClipboard}
             >
               Compartir
             </Button>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createTheme, ThemeProvider, Box, Typography, Button } from "@mui/material"
 import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API"
@@ -31,6 +32,17 @@ const theme = createTheme({
 });
 
 const ProfileForm = () => {
+
+  const [textCopied, setTextCopied] = useState(false);
+  const textToCopy = "callingfriends.com/" + API.user.username;
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        setTextCopied(true);
+      })
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -55,6 +67,7 @@ const ProfileForm = () => {
               color="secondary"
               variant="contained"
               startIcon={<ShareIcon />}
+              onClick={copyToClipboard}
             >
               Compartir
             </Button>
