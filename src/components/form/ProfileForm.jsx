@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createTheme, ThemeProvider, Box, Typography, Button, TextField } from "@mui/material"
+import { createTheme, ThemeProvider, Box, Typography, Button, TextField, Snackbar, Alert } from "@mui/material"
 import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API"
 
@@ -33,6 +33,8 @@ const theme = createTheme({
 
 const ProfileForm = () => {
 
+  const [openAlert, setOpenAlert] = useState(false);
+  const [openSecondAlert, setSecondOpenAlert] = useState(false);
   const [textCopied, setTextCopied] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false)
   const textToCopy = "callingfriends.com/" + API.user.username;
@@ -42,6 +44,12 @@ const ProfileForm = () => {
       .then(() => {
         setTextCopied(true);
       });
+
+    setSecondOpenAlert(true);
+    setTimeout(() => {
+      setSecondOpenAlert(false);
+    }, 3000);
+
   };
 
 
@@ -141,9 +149,16 @@ const ProfileForm = () => {
                   <TextField id="standard-basic" label="" variant="standard" />
                 </Box>
                 <Box sx={{ mt: 8, display: "flex", justifyContent: "center", gap: 4, }}>
-                <Button variant="contained" sx={{
+                  <Button variant="contained" sx={{
                     borderRadius: 8,
-                  }} 
+                  }}
+                    onClick={() => {
+                      setFormDisplay(false)
+                      setOpenAlert(true)
+                      setTimeout(() => {
+                        setOpenAlert(false)
+                      }, 3000);
+                    }}
                   >
                     Guardar
                   </Button>
@@ -185,7 +200,7 @@ const ProfileForm = () => {
                 <Box sx={{
                   display: "flex",
                   gap: "105px",
-                }}>  
+                }}>
                   <Typography>Fecha de nacimiento</Typography>
                   <Typography>{API.user.birthDate}</Typography>
                 </Box>
@@ -229,6 +244,12 @@ const ProfileForm = () => {
           </Box>
         </Box>
       </ThemeProvider>
+      <Snackbar open={openSecondAlert}>
+        <Alert severity="success">Copiado correctamente</Alert>
+      </Snackbar>
+      <Snackbar open={openAlert}>
+        <Alert severity="success">Agregado correctamente</Alert>
+      </Snackbar>
     </>
   )
 }

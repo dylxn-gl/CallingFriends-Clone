@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, Snackbar, Alert } from "@mui/material";
 import styled from "@emotion/styled";
 import ShareIcon from "@mui/icons-material/Share";
 import API from "../../api/API";
@@ -16,6 +16,8 @@ const Banner = () => {
 
   const [profilePhoto, setProfilePhoto] = useState(API.user.photo);
   const [backgroundPhoto, setBackgroundPhoto] = useState(API.user.background);
+  const [openAlert, setOpenAlert] = useState(false);
+  const [openSecondAlert, setSecondOpenAlert] = useState(false);
   const [textCopied, setTextCopied] = useState(false);
   const textToCopy = "callingfriends.com/" + API.user.username;
 
@@ -28,6 +30,11 @@ const Banner = () => {
         setProfilePhoto(imageDataURL);
       };
       reader.readAsDataURL(file);
+
+      setOpenAlert(true);
+      setTimeout(() => {
+        setOpenAlert(false);
+      }, 3000);
     }
   };
 
@@ -40,16 +47,26 @@ const Banner = () => {
         setBackgroundPhoto(imageDataURL2);
       };
       reader2.readAsDataURL(file2);
+
+      setOpenAlert(true);
+      setTimeout(() => {
+        setOpenAlert(false);
+      }, 3000);
+
     }
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        setTextCopied(true);
-      })
-  };
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      setTextCopied(true);
+    });
 
+    setSecondOpenAlert(true);
+    setTimeout(() => {
+      setSecondOpenAlert(false);
+    }, 3000);
+
+  };
 
   return (
     <Box
@@ -186,8 +203,14 @@ const Banner = () => {
           </Box>
         </Box>
       </Box>
+      <Snackbar open={openAlert}>
+        <Alert severity="success">Agregado correctamente</Alert>
+      </Snackbar>
+      <Snackbar open={openSecondAlert}>
+        <Alert severity="success">Copiado correctamente</Alert>
+      </Snackbar>
     </Box>
   );
 };
 
-export default Banner;  
+export default Banner;
