@@ -1,9 +1,9 @@
-import ProfilePage from "./pages/Profile";
+import Nav from "./components/nav/Nav";
 
 const App = () => {
   return (
     <>
-      <ProfilePage />
+      <Nav />
     </>
   );
 };
