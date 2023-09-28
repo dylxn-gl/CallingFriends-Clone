@@ -30,7 +30,7 @@ const theme = createTheme({
   overrides: {
     MuiButton: {
       root: {
-        textTransform: "none",
+        textTransform: "none!important",
       },
     },
   },

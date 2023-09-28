@@ -23,10 +23,10 @@ const theme = createTheme({
       main: "#4bb392",
     },
   },
-  overrides: {
+  components: {
     MuiButton: {
       root: {
-        textTransform: "none",
+        textTransform: "none!important",
       },
     },
   },

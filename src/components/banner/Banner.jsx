@@ -80,6 +80,8 @@ const Banner = () => {
         width: "100%",
         height: "340px",
         background: `url(${backgroundPhoto ? backgroundPhoto : API.user.background})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
         color: "#ffffff",
       }}
     >
@@ -107,7 +109,7 @@ const Banner = () => {
         sx={{
           mt: {xs: 6, md: 8,},
           ml: {xs: "20px", md: "128px"},
-          mr: "128px",
+          mr: {xs: "20px", md: "128px"},
           display: "flex",
         }}
       >
@@ -148,7 +150,7 @@ const Banner = () => {
           {/*Datos de usuario*/}
           <Box
             sx={{
-                mt: {xs: 7, md: 11},
+                mt: {xs: 10, md: 11},
                 mb: 2,
                 display: "flex",
                 flexDirection: {xs: "column", md: "row"},
