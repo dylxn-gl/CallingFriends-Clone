@@ -34,7 +34,7 @@ const BetsMain = () => {
                         gap: 4,
                         bgcolor: { xs: "transparent", md: "#efeeed", },
                     }}>
-                        <Typography sx={{
+                        <Typography variant="h3" sx={{
                             color: "#000000",
                         }}>
                             Apuestas  mas populares

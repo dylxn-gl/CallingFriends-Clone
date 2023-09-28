@@ -89,7 +89,7 @@ const Banner = () => {
       <Button
         sx={{
           borderRadius: 8,
-          margin: {xs: "24px 0 0 55%", md: "24px 0 0 80%",},
+          margin: { xs: "24px 0 0 55%", md: "24px 0 0 80%", },
         }}
         variant="contained"
       >
@@ -107,9 +107,9 @@ const Banner = () => {
       {/*Foto de perfil y datos*/}
       <Box
         sx={{
-          mt: {xs: 6, md: 8,},
-          ml: {xs: "20px", md: "128px"},
-          mr: {xs: "20px", md: "128px"},
+          mt: { xs: 6, md: 8, },
+          ml: { xs: "20px", md: "128px" },
+          mr: { xs: "20px", md: "128px" },
           display: "flex",
         }}
       >
@@ -150,50 +150,59 @@ const Banner = () => {
           {/*Datos de usuario*/}
           <Box
             sx={{
-                mt: {xs: 10, md: 11},
-                mb: 2,
-                display: "flex",
-                flexDirection: {xs: "column", md: "row"},
-                alignItems: {xs: "flex-end", md: "center"},
-                gap: 3,
+              mt: { xs: 5, md: 6 },
+              mb: 2,
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: { xs: "flex-end", md: "center" },
             }}
           >
             <Typography
               sx={{
-                textAlign: {xs: "right", md: "left"},
-                flexGrow: {xs: "", md: "1"},
+                textAlign: { xs: "right", md: "left" },
+                flexGrow: { xs: "", md: "1" },
               }}
             >
-              {API.user.name} {API.user.lastname}
-              <br />
-              @{API.user.username}
+              <Box component={"h1"}>
+                {API.user.name} {API.user.lastname}
+              </Box>
+              <Box component={"h5"} sx={{ mt: -4, }}>
+
+                @{API.user.username}
+              </Box>
             </Typography>
-            <Box sx={{display:"flex", gap: 3,}}>
-            <Typography
-              sx={{
-                textAlign: "center",
-              }}
-            >
-              {API.user.followers}
-              <br />
-              seguidores
-            </Typography>
-            <Typography
-              sx={{
-                textAlign: "center",
-              }}
-            >
-              {API.user.following}
-              <br />
-              seguidos
-            </Typography>
+            <Box sx={{ display: "flex", gap: 3, }}>
+              <Typography variant="h4"
+                sx={{
+                  textAlign: "center",
+                  mt: 3,
+                  mr: {xs: 0, md: -2},
+                  fontWeight: "bold",
+                }}
+              >
+                {API.user.followers}
+                <br />
+                seguidores
+              </Typography>
+              <Typography variant="h4"
+                sx={{
+                  textAlign: "center",
+                  mt: 3,
+                  mr: {xs: 0, md: -3},
+                  fontWeight: "bold",
+                }}
+              >
+                {API.user.following}
+                <br />
+                seguidos
+              </Typography>
             </Box>
           </Box>
           <Box
             sx={{
               ml: "-20px",
               padding: "8px 0 8px 25px",
-              display: {xs: "none", md: "flex"},
+              display: { xs: "none", md: "flex" },
               alignItems: "center",
               gap: 2,
               background: "linear-gradient(90deg,#fff 51%,rgba(69,9,121,0))",
@@ -201,7 +210,7 @@ const Banner = () => {
               maxWidth: "655px",
             }}
           >
-            <Typography variant="h6">
+            <Typography variant="h3" sx={{fontWeight: "bold",}}>
               callingfriends.com/{API.user.username}
             </Typography>
             <Button

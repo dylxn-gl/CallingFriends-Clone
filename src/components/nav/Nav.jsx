@@ -44,7 +44,7 @@ const Nav = () => {
           >
             {Links.map((link, index) => (
               <Link key={index} to={link.href} style={{ textDecoration: 'none' }}>
-                <Typography
+                <Typography variant="h5"
                   href=""
                   sx={{
                     display: "flex",

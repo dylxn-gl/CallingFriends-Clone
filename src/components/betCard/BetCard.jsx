@@ -11,9 +11,8 @@ const BetCard = ({ image, endDate, cost }) => {
     return (
         <>
             <Card sx={{
-                padding: 1,
-                display: "flex",
-                gap: 1, alignItems: "center",
+                padding: 2,
+                display: "flex", alignItems: "center",
                 borderRadius: 6,
                 width: "100%",
                 minWidth: "352px",
@@ -28,22 +27,26 @@ const BetCard = ({ image, endDate, cost }) => {
                     image={image}
                 />
                 <CardContent sx={{
+                    ml: "12px",
+                    padding: "0!important",
                     width: 45,
                     minWidth: "70%",
                     maxWidth: "70%",
                 }}>
-                    <Typography variant="body2">Description:</Typography>
-                    <Typography sx={{ fontWeight: "bold" }} variant="body2">
+                    <Typography sx={{ fontSize: "12.8px", }}>Description:</Typography>
+                    <Typography sx={{ fontSize: "12.8px", fontWeight: "bold" }} >
                         Termina: {endDate}
                     </Typography>
-                    <Typography sx={{ fontWeight: "bold" }} variant="body2">
+                    <Typography sx={{ fontSize: "12.8px", fontWeight: "bold" }} >
                         Monto: {cost}
                     </Typography>
                     <Button
                         sx={{
+                            padding: 0,
                             borderRadius: 6,
                             textTransform: "none",
-                            fontWeight: "bold",
+                            fontWeight: "600",
+                            fontSize: "13.6px",
                         }}
                         variant="contained"
                     >
